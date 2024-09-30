@@ -23,7 +23,7 @@ function renderCategoryButtons(categories) {
     });
 }
 function fetchProductsByCategory(category) {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
+    fetch(https://fakestoreapi.com/products/category/${category})
         .then(res => res.json())
         .then(products => {
             renderProducts(products);
@@ -32,7 +32,7 @@ function fetchProductsByCategory(category) {
 function fetchInitialProducts() {
     const categories = ['electronics', 'jewelery', "men's clothing", "women's clothing"];
     const promises = categories.map(category => 
-        fetch(`https://fakestoreapi.com/products/category/${category}`)
+        fetch(https://fakestoreapi.com/products/category/${category})
             .then(res => res.json())
     );
     Promise.all(promises).then(results => {
@@ -57,7 +57,7 @@ function renderProducts(products) {
         productTitle.textContent = product.title;
 
         let productPrice = document.createElement("p");
-        productPrice.textContent = `$${product.price}`;
+        productPrice.textContent = $${product.price};
 
         let addToCartBtn = document.createElement("button");
         addToCartBtn.textContent = "Add to cart";
@@ -83,7 +83,7 @@ function addToCart(product) {
     cartTitle.textContent = product.title;
 
     let cartPrice = document.createElement("p");
-    cartPrice.textContent = `$${product.price}`;
+    cartPrice.textContent = $${product.price};
 
     let removeBtn = document.createElement("button");
     removeBtn.setAttribute("class", "remove-btn");
@@ -104,5 +104,5 @@ document.querySelector(".cart-icon").addEventListener("click", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
     fetchCategories();
-    fetchInitialProducts(); 
+    fetchInitialProducts(); 
 });
